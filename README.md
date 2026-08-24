@@ -6,7 +6,7 @@ Welcome to my personal portfolio website!
 
 ## 🌐 Live Demo
 
-You can preview the live website here: [Live Demo]([https://areby-12.github.io/my-portfolio/](https://areby-12.github.io/my-portfolio/))
+You can preview the live website here: [Live Demo](https://areby-12.github.io/my-portfolio/)
 
 ---
 
