@@ -17,6 +17,11 @@
   --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -33,16 +38,20 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
 }
 
-/* Subtle background grid pattern for tech ambiance */
+/* Subtle background grid pattern for tech ambiance - Fixed to prevent overflow */
 body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   background: 
     radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.05) 0%, transparent 60%),
     linear-gradient(rgba(0, 240, 255, 0.02) 1px, transparent 1px),
@@ -52,11 +61,11 @@ body::before {
   z-index: -1;
 }
 
-/* 2. Keyframe Animations */
+/* 2. Keyframe Animations (Optimized for mobile safety) */
 @keyframes slideFromLeft {
   0% {
     opacity: 0;
-    transform: translateX(-60px);
+    transform: translateX(-20px);
   }
   100% {
     opacity: 1;
@@ -67,7 +76,7 @@ body::before {
 @keyframes slideFromRight {
   0% {
     opacity: 0;
-    transform: translateX(60px);
+    transform: translateX(20px);
   }
   100% {
     opacity: 1;
@@ -88,9 +97,10 @@ body::before {
 
 /* 3. Global Section Styling & Dividers */
 main {
-  width: 90%;
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
+  padding: 0 15px;
   flex: 1;
 }
 
@@ -103,6 +113,7 @@ section {
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.4s ease;
+  width: 100%;
 }
 
 section:hover {
@@ -320,6 +331,7 @@ footer {
   padding: 25px 20px;
   text-align: center;
   box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.8);
+  width: 100%;
 }
 
 .footer {
@@ -347,5 +359,9 @@ footer {
     flex-direction: column;
     gap: 8px;
     text-align: center;
+  }
+
+  section {
+    padding: 15px;
   }
 }
